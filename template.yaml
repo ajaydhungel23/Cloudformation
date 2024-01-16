@@ -4,7 +4,7 @@ Parameters:
   KeyName:
     Type: String
     Description: Key pair to use for the EC2 instance
-    Default: main.pem  # Set the default key pair name
+    Default: main  # Set the default key pair name
   AMI:
     Type: AWS::EC2::Image::Id
     Description: AMI ID for the EC2 instance
