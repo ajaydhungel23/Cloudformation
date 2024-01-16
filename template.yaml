@@ -141,12 +141,11 @@ Resources:
       InstanceType: t2.micro
       KeyName: main.pem
       ImageId: ami-0cd3c7f72edd5b06d
-      NetworkInterfaces:
-        - GroupSet:
-            - !Ref EC2SecurityGroup
-          AssociatePublicIpAddress: true
-          DeviceIndex: '0'
-          SubnetId: !Ref PublicSubnet1
+      SecurityGroupIds:
+        - !Ref EC2SecurityGroup
+      AssociatePublicIpAddress: true
+      DeviceIndex: '0'
+      SubnetId: !Ref PublicSubnet1
 
   PublicInstance2:
     Type: AWS::EC2::Instance
@@ -154,12 +153,9 @@ Resources:
       InstanceType: t2.micro
       KeyName: main.pem
       ImageId: ami-0cd3c7f72edd5b06d
-      NetworkInterfaces:
-        - GroupSet:
-            - !Ref EC2SecurityGroup
-          AssociatePublicIpAddress: true
-          DeviceIndex: '0'
-          SubnetId: !Ref PublicSubnet2
+      SecurityGroupIds:
+        - !Ref EC2SecurityGroup
+      SubnetId: !Ref PublicSubnet2
 
   PrivateInstance1:
     Type: AWS::EC2::Instance
@@ -167,20 +163,16 @@ Resources:
       InstanceType: t2.micro
       KeyName: main.pem
       ImageId: ami-0cd3c7f72edd5b06d
-      NetworkInterfaces:
-        - GroupSet:
-            - !Ref EC2SecurityGroup
-          DeviceIndex: '0'
-          SubnetId: !Ref PrivateSubnet1
+      SubnetId: !Ref PrivateSubnet1
+      SecurityGroupIds:
+        - !Ref EC2SecurityGroup
 
   PrivateInstance2:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
       KeyName: main.pem
-      ImageId:ami-0cd3c7f72edd5b06d
-      NetworkInterfaces:
-        - GroupSet:
-            - !Ref EC2SecurityGroup
-          DeviceIndex: '0'
-          SubnetId: !Ref PrivateSubnet2
+      ImageId: ami-0cd3c7f72edd5b06d
+      SecurityGroupIds:
+        - !Ref EC2SecurityGroup
+      SubnetId: !Ref PrivateSubnet2
