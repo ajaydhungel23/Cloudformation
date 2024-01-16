@@ -141,7 +141,7 @@ Resources:
     Properties:
       InstanceType: t2.micro
       KeyName: main.pem
-      ImageId: ami-0cd3c7f72edd5b06d
+      ImageId: !Ref AMI
       SecurityGroupIds:
         - !Ref EC2SecurityGroup
       AssociatePublicIpAddress: true
@@ -153,7 +153,7 @@ Resources:
     Properties:
       InstanceType: t2.micro
       KeyName: main.pem
-      ImageId: ami-0cd3c7f72edd5b06d
+      ImageId: !Ref AMI
       SecurityGroupIds:
         - !Ref EC2SecurityGroup
       SubnetId: !Ref PublicSubnet2
@@ -163,7 +163,7 @@ Resources:
     Properties:
       InstanceType: t2.micro
       KeyName: main.pem
-      ImageId: ami-0cd3c7f72edd5b06d
+      ImageId: !Ref AMI
       SubnetId: !Ref PrivateSubnet1
       SecurityGroupIds:
         - !Ref EC2SecurityGroup
@@ -173,7 +173,7 @@ Resources:
     Properties:
       InstanceType: t2.micro
       KeyName: main.pem
-      ImageId: ami-0cd3c7f72edd5b06d
+      ImageId: !Ref AMI
       SecurityGroupIds:
         - !Ref EC2SecurityGroup
       SubnetId: !Ref PrivateSubnet2
