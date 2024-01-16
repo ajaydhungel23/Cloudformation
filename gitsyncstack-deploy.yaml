@@ -1,0 +1,4 @@
+template-file-path: template.yaml
+parameters:
+  AMI: ami-0cd3c7f72edd5b06d
+tags: {}
